@@ -36,10 +36,18 @@ export function getFrenchWord(number: number): string {
       // if the number is between 21 and 99, return its French word as a combination of the words for its tens and ones places
       const tens = Math.floor(number / 10) * 10;
       const ones = number % 10;
+
+      if (tens === 70 || tens === 90) {
+        const base = tens === 70 ? frenchWords[60] : frenchWords[80];
+        const onesWord = frenchWords[ones + 10];
+        return base + '-' + onesWord;
+      } else {
       return frenchWords[tens] + '-' + frenchWords[ones];
+      }
     } else {
       // if the number is 100 return the french word for 100.
       return 'cent';
     }
   }
   
+  // This algorithm needs to change because 70 - 79 is not 10 + single, and 90 - 99 is not either. We can change it to between 71 - 79 : soixante + 10 - 19 and the same with 91 - 99. - Solved 7-10-23
