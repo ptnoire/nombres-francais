@@ -3,9 +3,11 @@ import { TranslateDaysOfWeek } from "@/components/translate-daysofweek";
 import { TranslateMonths } from "@/components/translate-month";
 import { TranslateNumbers } from "@/components/translate-numbers";
 import { faCalendarCheck } from "@fortawesome/free-regular-svg-icons";
+import { TranslateVerbs } from "@/components/translate-verbs";
 import {
   faCalendarWeek,
   faListNumeric,
+  faPersonWalking,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -28,11 +30,15 @@ export default function Home() {
         <button onClick={() => setShowItem("months")}>
           <FontAwesomeIcon icon={faCalendarCheck} className="text-4xl" />
         </button>
+        <button onClick={() => setShowItem("verbs")}>
+          <FontAwesomeIcon icon={faPersonWalking} className="text-4xl" />
+        </button>
       </div>
       <div className="flex flex-row items-center justify-evenly max-w-4xl p-4 mx-auto gap-20">
         {showItem === "numbers" && <TranslateNumbers />}
         {showItem === "daysofweek" && <TranslateDaysOfWeek />}
         {showItem === "months" && <TranslateMonths />}
+        {showItem === "verbs" && <TranslateVerbs />}
       </div>
     </main>
   );

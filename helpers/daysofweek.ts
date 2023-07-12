@@ -24,8 +24,8 @@ export function convertNumberToDay(number:number): string {
         4: 'Thursday',
         5: 'Friday',
         6: 'Saturday',
-        7: 'Sunday'}
-
+        7: 'Sunday'
+      }
     if (number in englishWords) {
         return englishWords[number];
       } else {
