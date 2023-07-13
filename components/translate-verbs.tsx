@@ -7,8 +7,9 @@ export function TranslateVerbs() {
   const [monthEnglish, setmonthEnglish] = useState<string | null>(null);
 
   const generateNumber = () => {
-    const newNumber = Math.floor(Math.random() * 60) + 1;
+    const newNumber = Math.floor(Math.random() * 175) + 1;
     // Need a more dynamic way to get the list from the function so we can update it.
+    // GetFrenchVerb is a function that contains an array.
     setNumber(newNumber);
     setShowAnswer(false);
     setmonthEnglish(getEnglishVerb(newNumber));
