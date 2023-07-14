@@ -35,7 +35,7 @@ export function getEnglishProposition(number: number): string {
         3: 'On',
         4: 'Under',
         5: 'Near',
-        6: 'Next to',
+        6: 'Far from',
         7: 'Beside',
         8: 'Between',
         9: 'In front of',
@@ -53,6 +53,36 @@ export function getEnglishProposition(number: number): string {
 
     if (number in getEnglishProposition) {
         return getEnglishProposition[number];
+    } else {
+        return 'Out of Range';
+    }
+}
+
+export function pronunciationProp(number: number): string {
+    const pronunciationProp: Record<number, string> = {
+        1: 'oh-deh-SYUHV duh',
+        2: 'ahn-deh-SOO duh',
+        3: 'sewr',
+        4: 'soo',
+        5: 'preh duh',
+        6: 'l-won duh',
+        7: 'ah koh-TAY duh',
+        8: 'ahn-truh',
+        9: 'duh-VAHN',
+        10: 'deh-RYAYR',
+        11: 'duh low-truh koh-TAY duh',
+        12: 'ahn fahs duh',
+        13: 'ah gohsh duh',
+        14: 'ah dwaht duh',
+        15: 'koh-ntr',
+        16: 'dahn',
+        17: 'sheh',
+        18: 'ah',
+        19: 'ahn',
+    }
+
+    if (number in pronunciationProp) {
+        return pronunciationProp[number];
     } else {
         return 'Out of Range';
     }
