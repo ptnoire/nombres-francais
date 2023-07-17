@@ -37,7 +37,7 @@ export function TranslateDirections() {
         </button>
       )}
       {showAnswer && getNumber && (
-        <h3 className="border-2 px-4 py-2 rounded-md border-yellow-100 text-sm">
+        <h3 className="border-2 px-4 py-2 rounded-md italic text-lime-200 border-yellow-100 text-sm">
           {pronunciationProp(getNumber)}
         </h3>
       )}

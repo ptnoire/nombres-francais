@@ -24,7 +24,7 @@ export default function Home() {
       <h1 className="text-slate-100 text-5xl font-bold text-center">
         Bonjour le Monde!
       </h1>
-      <div className="flex flex-row items-center justify-evenly p-3 w-full">
+      <div className="flex flex-row flex-wrap gap-4 items-center justify-evenly  p-3 w-full">
         <button onClick={() => setShowItem("numbers")}>
           <FontAwesomeIcon icon={faListNumeric} className="text-4xl" />
         </button>
