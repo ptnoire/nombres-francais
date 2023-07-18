@@ -28,7 +28,7 @@ export default function Home() {
       <h3 className="text-slate-400 justify-evenly m-6 p-6 text-sm italic text-center">
         "A simple way to practice your french! Just click any of the buttons
         below to access different randomized subjects, words and numbers that
-        you can practice until you've memorized all of them!"
+        you can practice until you&aposve memorized all of them!"
       </h3>
       <h1 className="text-slate-100 text-5xl p-6 font-bold text-center">
         Bonjour le Monde!
