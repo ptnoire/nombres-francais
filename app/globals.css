@@ -25,3 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+h1, h2, h3 {
+  animation: fadein 1s forwards;
+}
+
+button {
+  animation: fadein 2s forwards;
+}
+
+@keyframes fadein {
+  0% { opacity: 0%;}
+  100% {opacity: 100%;}
+}

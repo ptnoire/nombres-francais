@@ -2,7 +2,11 @@
 import { TranslateDaysOfWeek } from "@/components/translate-daysofweek";
 import { TranslateMonths } from "@/components/translate-month";
 import { TranslateNumbers } from "@/components/translate-numbers";
-import { faCalendarCheck } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCalendarCheck,
+  faFaceSmile,
+} from "@fortawesome/free-regular-svg-icons";
+import { TranslateAdj } from "@/components/translate-adj";
 import { TranslateVerbs } from "@/components/translate-verbs";
 import { GetRandomDate } from "@/components/translate-dates";
 import {
@@ -21,7 +25,12 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen justify-center flex-col items-center p-24 max-w-4xl mx-auto">
-      <h1 className="text-slate-100 text-5xl font-bold text-center">
+      <h3 className="text-slate-400 justify-evenly m-6 p-6 text-sm italic text-center">
+        "A simple way to practice your french! Just click any of the buttons
+        below to access different randomized subjects, words and numbers that
+        you can practice until you've memorized all of them!"
+      </h3>
+      <h1 className="text-slate-100 text-5xl p-6 font-bold text-center">
         Bonjour le Monde!
       </h1>
       <div className="flex flex-row flex-wrap gap-4 items-center justify-evenly  p-3 w-full">
@@ -43,6 +52,9 @@ export default function Home() {
         <button onClick={() => setShowItem("randomdates")}>
           <FontAwesomeIcon icon={faDice} className="text-4xl" />
         </button>
+        <button onClick={() => setShowItem("adjectives")}>
+          <FontAwesomeIcon icon={faFaceSmile} className="text-4xl" />
+        </button>
       </div>
       <div className="flex flex-row items-center justify-evenly max-w-4xl p-4 mx-auto gap-20">
         {showItem === "numbers" && <TranslateNumbers />}
@@ -51,6 +63,7 @@ export default function Home() {
         {showItem === "verbs" && <TranslateVerbs />}
         {showItem === "directions" && <TranslateDirections />}
         {showItem === "randomdates" && <GetRandomDate />}
+        {showItem === "adjectives" && <TranslateAdj />}
       </div>
     </main>
   );
