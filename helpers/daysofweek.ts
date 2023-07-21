@@ -6,7 +6,10 @@ export function getDayWord(number: number): string {
         4: 'Jeudi',
         5: 'Vendredi',
         6: 'Samedi',
-        7: 'Dimanche'
+        7: 'Dimanche',
+        8: 'Demain',
+        9: 'Hier',
+        10: "Aujourd'hui",
     };
     
     if (number in frenchWords) {
@@ -24,7 +27,10 @@ export function convertNumberToDay(number:number): string {
         4: 'Thursday',
         5: 'Friday',
         6: 'Saturday',
-        7: 'Sunday'
+        7: 'Sunday',
+        8: 'Tomorrow',
+        9: 'Yesterday',
+        10: 'Today',
       }
     if (number in englishWords) {
         return englishWords[number];

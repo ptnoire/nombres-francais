@@ -8,7 +8,7 @@ export function TranslateDaysOfWeek() {
   const [dayEnglish, setDayEnglish] = useState<string | null>(null);
 
   const generateNumber = () => {
-    const newNumber = Math.floor(Math.random() * 7) + 1;
+    const newNumber = Math.floor(Math.random() * 10) + 1;
     setNumber(newNumber);
     setShowAnswer(false);
     setDayEnglish(convertNumberToDay(newNumber));

@@ -25,11 +25,14 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen justify-center flex-col items-center p-24 max-w-4xl mx-auto">
-      <h3 className="text-slate-400 justify-evenly m-6 p-6 text-sm italic text-center">
-        &quot;A simple way to practice your french! Just click any of the
-        buttons below to access different randomized subjects, words and numbers
-        that you can practice until you&apos;ve memorized all of them!&quot;
-      </h3>
+      {!showItem && (
+        <h3 className="text-slate-400 justify-evenly m-6 p-6 text-sm italic text-center">
+          &quot;A simple way to practice your french! Just click any of the
+          buttons below to access different randomized subjects, words and
+          numbers that you can practice until you&apos;ve memorized all of
+          them!&quot;
+        </h3>
+      )}
       <h1 className="text-slate-100 text-5xl p-6 font-bold text-center">
         Bonjour le Monde!
       </h1>
