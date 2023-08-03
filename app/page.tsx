@@ -15,10 +15,12 @@ import {
   faDice,
   faListNumeric,
   faPersonWalking,
+  faPersonWalkingDashedLineArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { TranslateDirections } from "@/components/translate-directrions";
+import { TranslateMainVerbs } from "@/components/translate-mainverb";
 
 export default function Home() {
   const [showItem, setShowItem] = useState<string | null>(null);
@@ -46,6 +48,12 @@ export default function Home() {
         <button onClick={() => setShowItem("months")}>
           <FontAwesomeIcon icon={faCalendarCheck} className="text-4xl" />
         </button>
+        <button onClick={() => setShowItem("mainverbs")}>
+          <FontAwesomeIcon
+            icon={faPersonWalkingDashedLineArrowRight}
+            className="text-4xl"
+          />
+        </button>
         <button onClick={() => setShowItem("verbs")}>
           <FontAwesomeIcon icon={faPersonWalking} className="text-4xl" />
         </button>
@@ -67,6 +75,7 @@ export default function Home() {
         {showItem === "directions" && <TranslateDirections />}
         {showItem === "randomdates" && <GetRandomDate />}
         {showItem === "adjectives" && <TranslateAdj />}
+        {showItem === "mainverbs" && <TranslateMainVerbs />}
       </div>
     </main>
   );
