@@ -1,4 +1,8 @@
-import { getMainFrenchVerb, getFrenchVersion } from "@/helpers/mainverbs";
+import {
+  getMainFrenchVerb,
+  getFrenchVersion,
+  getMainEnglishVerb,
+} from "@/helpers/mainverbs";
 import { getEnglishPronoun, getFrenchPronoun } from "@/helpers/pronouns";
 import { useState } from "react";
 
@@ -6,6 +10,7 @@ export function TranslateMainVerbs() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [getVerbNumber, setVerbNumber] = useState<number | null>(null);
   const [getPronounNumber, setPronounNumber] = useState<number | null>(null);
+  const [getEnglish, setEnglish] = useState<string | null>(null);
   const [getMainVerb, setMainVerb] = useState<string | null>(null);
   const [getPronoun, setPronoun] = useState<string | null>(null);
 
@@ -17,6 +22,7 @@ export function TranslateMainVerbs() {
 
     setShowAnswer(false);
     setMainVerb(getMainFrenchVerb(randomVerbNumber));
+    setEnglish(getMainEnglishVerb(randomVerbNumber));
     setPronoun(getEnglishPronoun(randomPronounNumber));
   };
 
@@ -30,7 +36,7 @@ export function TranslateMainVerbs() {
           className="border-4 px-4 py-2 rounded-md border-emerald-400 text-3xl"
           onClick={generateNumber}
         >
-          {getMainVerb ? `${getPronoun} + ${getMainVerb}` : "Start Test"}
+          {getMainVerb ? `${getPronoun} + ${getEnglish}` : "Start Test"}
         </button>
       </div>
       {getMainVerb && getVerbNumber && (
@@ -42,7 +48,7 @@ export function TranslateMainVerbs() {
             ? `${getFrenchPronoun(getPronounNumber)} ${getFrenchVersion(
                 getVerbNumber,
                 getPronounNumber
-              )}`
+              )} (${getMainVerb})`
             : "Show Answer"}
         </button>
       )}

@@ -35,6 +35,44 @@ export function getMainFrenchVerb(number: number): string {
       return 'Out of Range';
     }
   }
+
+  export function getMainEnglishVerb(number: number): string {
+    const englishWords: Record<number, string> = {
+        1: "Go",
+        2: "Be called",
+        3: "Wait",
+        4: "Have",
+        5: "Drink",
+        6: "Drive",
+        7: "Know",
+        8: "Run",
+        9: "Must",
+        10: "Say",
+        11: "Write",
+        12: "Be",
+        13: "Do",
+        14: "Finish",
+        15: "Read",
+        16: "Eat",
+        17: "Put",
+        18: "Offer",
+        19: "Speak",
+        20: "Can",
+        21: "Take",
+        22: "Receive",
+        23: "Know",
+        24: "Follow",
+        25: "Come",
+        26: "See",
+        27: "Want",
+    };
+    
+    if (number in englishWords) {
+      return englishWords[number];
+    } else {
+      return 'Out of Range';
+    }
+  }
   
   export function getFrenchVersion(number: number, version: number): string[] {
     const frenchTranslations: Record<number, string[]> = {
